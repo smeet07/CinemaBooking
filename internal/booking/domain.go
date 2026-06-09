@@ -1,5 +1,6 @@
 package booking
 import "errors"
+import "time"
 
 var (
 	ErrSeatAlreadyBooked=errors.New("seat is already taken")
@@ -10,6 +11,8 @@ type Booking struct{
 	SeatID string
 	UserID string
 	Status string
+	ExpiresAt time.Time
+
 }
 
 type BookingStore interface{
